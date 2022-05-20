@@ -1,0 +1,20 @@
+.plusButton {
+    width : 80px;
+    height: 80px;
+
+    position: fixed;
+    
+    right : 2.5vw;
+    bottom: 2.5vw;
+
+    border-radius: 50%;
+    background-color: #ffffff;
+    
+    filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 0px 8px);
+}
+
+.plusButton button {
+    padding: calc(75% - 30px);
+    background: none;
+    border-style: none;
+}

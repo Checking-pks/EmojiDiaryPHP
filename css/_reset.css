@@ -378,6 +378,10 @@ textarea {
     overflow: auto;
     resize: vertical;
 }
+
+textarea:focus {
+    outline: none;
+}
  
 fieldset {
     min-width: 0;

@@ -1,17 +1,19 @@
 <html>
     <head>
-        <title>Everyone's Emoji Pad</title>
+        <title>Emoji Diary</title>
+        
         <link rel="stylesheet" href="css/_reset.css">
         <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/emojiField.css">
+        <link rel="stylesheet" href="css/button.css">
+
+        <script src="javascript/scrollEvent.js"> </script>
     </head>
     <body>
         <?php 
-            $db_conn = $db_conn = mysqli_connect(
-                'localhost', 
-                'emoji', 
-                '1234', 
-                'emoji'
-            );
+            include_once("./_inc/dbconfig.php");
+
+            $db_conn = getConnect();
 
             $logoCount = mysqli_num_rows(mysqli_query($db_conn, "SELECT * FROM emoji_list"));
             $randomLogo = mysqli_query($db_conn, "SELECT * FROM emoji_list where id=".rand(1, $logoCount));
@@ -26,6 +28,97 @@
                     Everyone's Emoji Pad
                 </div>
             </header>";
+
+            echo
+            "
+            <div class='emojiField'>    
+                <div class='emojiPad'>
+                    <div class='headEmojiField'>
+                    
+                    </div>
+                    <div class='dividingLine'></div>
+                    <div class='bodyEmojiField'>
+                    
+                    </div>
+                </div>
+                <div class='emojiPad'>
+                    <div class='headEmojiField'>
+                    
+                    </div>
+                    <div class='dividingLine'></div>
+                    <div class='bodyEmojiField'>
+                    
+                    </div>
+                </div>
+                <div class='emojiPad'>
+                    <div class='headEmojiField'>
+                    
+                    </div>
+                    <div class='dividingLine'></div>
+                    <div class='bodyEmojiField'>
+                    
+                    </div>
+                </div>
+                <div class='emojiPad'>
+                    <div class='headEmojiField'>
+                    
+                    </div>
+                    <div class='dividingLine'></div>
+                    <div class='bodyEmojiField'>
+                    
+                    </div>
+                </div>
+                <div class='emojiPad'>
+                    <div class='headEmojiField'>
+                    
+                    </div>
+                    <div class='dividingLine'></div>
+                    <div class='bodyEmojiField'>
+                    
+                    </div>
+                </div>
+                <div class='emojiPad'>
+                    <div class='headEmojiField'>
+                    
+                    </div>
+                    <div class='dividingLine'></div>
+                    <div class='bodyEmojiField'>
+                    
+                    </div>
+                </div>
+                <div class='emojiPad'>
+                    <div class='headEmojiField'>
+                    
+                    </div>
+                    <div class='dividingLine'></div>
+                    <div class='bodyEmojiField'>
+                    
+                    </div>
+                </div>
+                <div class='emojiPad'>
+                    <div class='headEmojiField'>
+                    
+                    </div>
+                    <div class='dividingLine'></div>
+                    <div class='bodyEmojiField'>
+                    
+                    </div>
+                </div>
+                <div class='emojiPad'>
+                    <div class='headEmojiField'>
+                    
+                    </div>
+                    <div class='dividingLine'></div>
+                    <div class='bodyEmojiField'>
+                    
+                    </div>
+                </div>
+            </div>";
+
+            echo "
+            <div class='plusButton'>
+                <button>➕</button>
+            </div>";
         ?> 
     </body>
 </html>

@@ -1,23 +1,41 @@
 .emojiField {
     width: 100%;
+}
 
-    flex: 1 1 auto;
-    flex-wrap: wrap;
+.headEmojiField {
+    width : 150px;
+    height: 100%;
 
-    display: flex;
-    flex-direction: row;
+    margin: 0 1%;
+}
+
+.dividingLine {
+    width : 0.1%;
+    height: 100%;
+
+    margin: 0 1%;
+
+    background-color : #7f7f7f7f;
+}
+
+.bodyEmojiField {
+    width : calc(100% - 150px - 0.1% - 4%);
+    height: 100%;
 }
 
 .emojiPad {
-    width: 220px;
+    width: calc(100% - 40px);
     height: 220px;
 
-    margin: 2vw;
+    margin: 15px 20px;
     padding: 10px;
 
     background-color: #FFFDDE;
     border-radius: 5px;   
     border: 1px solid #dedede;
+
+    display: flex;
+    flex-direction: row;
 }
 
 .emojiText {
