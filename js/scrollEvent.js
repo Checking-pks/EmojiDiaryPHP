@@ -4,10 +4,6 @@ window.addEventListener('scroll',  function(){    //스크롤시 이벤트가 �
     let header = document.getElementsByClassName('header')[0];
     
     if (value > 0) {
-        header.style.position = 'fixed';
-        header.style.top = 0;
-        header.style.left = 0;
-    } else {
-        header.style.position = '';
+        
     }
 })

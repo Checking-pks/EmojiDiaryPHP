@@ -1,5 +1,7 @@
 .emojiField {
     width: 100%;
+
+    margin-top: 120px;
 }
 
 .headEmojiField {
@@ -7,6 +9,8 @@
     height: 100%;
 
     margin: 0 1%;
+
+    text-align: center;
 }
 
 .dividingLine {
@@ -15,12 +19,21 @@
 
     margin: 0 1%;
 
-    background-color : #7f7f7f7f;
+    background-color : #edd501;
 }
 
 .bodyEmojiField {
     width : calc(100% - 150px - 0.1% - 4%);
     height: 100%;
+
+    padding: 0 1%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+
+    font-size: 30px;
 }
 
 .emojiPad {
@@ -49,4 +62,34 @@
     background: none;
     border: none;
     overflow: hidden;
+}
+
+.mainEmoji {
+    font-size: 100px;
+    width: 100%;
+}
+
+.date {
+    font-size: 30px;
+    font-family: 'GangwonEdu_OTFBoldA';
+}
+
+.e {
+    text-align: center;
+    width: 10%;
+    font-size: 6vw;
+}
+
+@media screen and (max-width: 940px) {
+    .e {
+        width: 20%;
+        font-size: 7vw;
+    }
+}
+
+@media screen and (min-width: 940px) and (max-width: 1400px) {
+    .e {
+        width: 20%;
+        font-size: 66px;
+    }
 }
