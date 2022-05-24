@@ -456,3 +456,8 @@ template {
         text-rendering: optimizeLegibility;
     }
 }
+
+.zero {
+  width: 0;
+  height: 0;
+}

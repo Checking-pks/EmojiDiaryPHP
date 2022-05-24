@@ -1,10 +1,3 @@
-$('.closeButton').click(function(){
-    console.log('abc');
-    $('.questionField').css('visibility', 'hidden');
-    $('body::before').css('visibility', 'hidden');
-    $('.header::before').css('visibility', 'hidden');
-});
-
 $(document).ready(function () {
     $('button.closeButton').click(function () {
         $('div.questionField').css('visibility', 'hidden');
@@ -22,5 +15,28 @@ $(document).ready(function () {
         
         $('body').addClass('blur');
         $('header.header').addClass('blur');
+    });
+
+    $('button.addQuestionButton').click(function () {
+        var emojiString = "";
+        var loreString = "";
+
+        if ($('.addEmoji').text()[0])
+            emojiString += $('.addEmoji').text()[0];
+        else return;
+
+        for (var i=1; i<5; i++) {
+            if ($('.addEmoji').text()[i])
+                emojiString += "\n" + $('.addEmoji').text()[i];
+            else break;
+        }
+
+        loreString += $('.addLore').text()[0];
+
+        for (var i=1; i<5; i++) 
+            loreString += "\n" + $('.addLore').text()[i];
+
+        console.log(emojiString);
+        console.log(loreString);
     });
 });
