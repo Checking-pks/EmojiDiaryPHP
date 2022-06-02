@@ -71,7 +71,7 @@
                     echo "<div class='headQuestionField'>"; /*open - headQuestionField*/
                     echo "<div class='textField'>".$row["question"]."</div>";
                     if ($row["id"] != 1) {
-                        echo "<form class='zero' id='deleteQuestion' method='post' action='deleteQuestion.php' target='QuestionIframe'>";
+                        echo "<form class='zero' id='deleteQuestion' method='post' action='deleteQuestion.php' target='iframe'>";
                         echo "<input type='hidden' name='id' value=".$row["id"]."></input>";
                         echo "</form>";
                         echo "<button class='deleteQuestionButton' form='deleteQuestion'></button>";
@@ -84,7 +84,7 @@
                     $loreArray = explode("\n", $row["lore"]);
 
                     for ($i=0; $i<count($answerArray); $i++) {
-                        echo "<button class='options'>"; /*open - button.options*/
+                        echo "<button class='options nonSelectedEmoji'>"; /*open - button.options*/
                         echo "<div class='emoji'>".$answerArray[$i]."</div>";
                         echo "<div class='lore'>".$loreArray[$i]."</div>";
                         echo "</button>"; /*close - button.options*/
@@ -96,7 +96,7 @@
 
                 /*질문 추가*/
                 echo "
-                <form class='questionPad' id='addQuestion' method='post' action='addQuestion.php' target='QuestionIframe'>
+                <form class='questionPad' id='addQuestion' method='post' action='addQuestion.php' target='iframe'>
                     <div class='headQuestionField'>
                         <input class='addQuestionField' name='Q' maxlength='10' placeholder='기록 추가'></input>
                         <button class='addQuestionButton' form='addQuestion'></button>
@@ -123,7 +123,6 @@
                             <input class='addLore' name='L5' maxlength='4' placeholder='설명'></input>
                         </div>
                     </div>
-                    <iframe class='zero' name='QuestionIframe'></iframe>
                 </form>";
             
             echo "</div>"; /*close - questionField*/
@@ -142,6 +141,7 @@
                 </button>
             </div>";
 
+            echo "<iframe class='zero' name='iframe'></iframe>";
         ?> 
     </body>
 </html>

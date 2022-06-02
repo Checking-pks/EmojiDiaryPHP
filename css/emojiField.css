@@ -80,6 +80,10 @@
     font-size: 6vw;
 }
 
+.options {
+    border-radius: 10px;
+}
+
 @media screen and (max-width: 940px) {
     .e {
         width: 20%;

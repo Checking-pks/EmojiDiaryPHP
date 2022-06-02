@@ -85,6 +85,12 @@
 
 .options {
     background: none;
-    border: none;
 }
 
+.selectedEmoji {
+    border: 2px solid black;
+}
+
+.nonSelectedEmoji {
+    border: none;
+}
