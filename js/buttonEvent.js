@@ -20,6 +20,7 @@ $(document).ready(function () {
     $('button.doneButton').click(function () {
         $dayTextList = $('.textField');
         $dayEmojiList = $('.selectedEmoji > .emoji');
+        $dayLoreList = $('.selectedEmoji > .lore');
         
         if ($dayTextList.size() != $dayEmojiList.size())
             return;
@@ -27,18 +28,21 @@ $(document).ready(function () {
         $mainEmoji = $dayEmojiList[0].innerHTML
         $textList = "";
         $emojiList = "";
+        $loreList = "";
 
         for ($i = 0; $i < $dayTextList.size(); $i++) {
             if ($i) {
-                $textList += "\n";
-                $emojiList += "\n";
+                $textList += "\\n";
+                $emojiList += "\\n";
+                $loreList += "\\n";
             }
 
-            $textList += $dayTextList[$i].innerHTML
-            $emojiList += $dayEmojiList[$i].innerHTML
+            $textList += $dayTextList[$i].innerHTML;
+            $emojiList += $dayEmojiList[$i].innerHTML;
+            $loreList += $dayLoreList[$i].innerHTML;
         }
 
-        $src = 'addDay.php?me=' + $mainEmoji + '&t=' + $textList + '&e=' + $emojiList;
+        $src = 'addDay.php?me=' + $mainEmoji + '&t=' + $textList + '&e=' + $emojiList + '&l=' + $loreList;
 
         $('iframe').attr('src', $src);
 
@@ -74,16 +78,12 @@ $(document).ready(function () {
     });
 
     $('button.options').click(function () {
-        $idxLine = $('button.options').index(this);
-        var optionsArray = $('button[class=options]');
+        $selector = $(this).parent();
 
-        while ($idxLine % 5)
-            $idxLine -= 1;
+        console.log($selector);
 
-        $idxLine = $idxLine / 5 + 1
-
-        $('div.questionField > div:nth-child(' + $idxLine + ') > div.bodyQuestionField > button.selectedEmoji').addClass('nonSelectedEmoji');
-        $('div.questionField > div:nth-child(' + $idxLine + ') > div.bodyQuestionField > button.selectedEmoji').removeClass('selectedEmoji');
+        for ($i=0; $i<$selector[0].children.length; $i++) 
+            $selector[0].children[$i].className = 'options nonSelectedEmoji';
 
         $(this).addClass('selectedEmoji');
         $(this).removeClass('nonSelectedEmoji');

@@ -15,7 +15,7 @@
   text-shadow: none;
 }
  
-html {
+html, button {
   font-family: -apple-system,
     BlinkMacSystemFont,
     /* 한글 폰트 들어갈 자리 */

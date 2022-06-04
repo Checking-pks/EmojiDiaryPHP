@@ -3,10 +3,8 @@
 
     $db_conn = getConnect();
 
-    
-
     $dateMemoQuery = "INSERT INTO date_memo (date, mainEmoji) VALUES (DATE_FORMAT(now(), '%Y-%m-%d'), '". $_GET['me'] ."' )";
-    $dateMemoQuestionQuery = "INSERT INTO date_memo_question (question, answer) VALUES ('". $_GET['t'] ."', '". $_GET['e'] ."')";
+    $dateMemoQuestionQuery = "INSERT INTO date_memo_question (question, answer, lore) VALUES ('". $_GET['t'] ."', '". $_GET['e'] ."', '". $_GET['l'] ."')";
 
     echo $dateMemoQuery;
     echo "<br>";

@@ -1,5 +1,5 @@
 /*버튼 기본 위치*/
-.plusButton, .closeButton, .doneButton {
+.plusButton, .refreshButton, .closeButton, .doneButton {
     width : 80px;
     height: 80px;
 
@@ -26,7 +26,7 @@
 }
 
 /*버튼 가로 위치*/
-.plusButton, .closeButton {
+.plusButton, .refreshButton, .closeButton {
     right : 2.5vw;
 }
 
@@ -35,7 +35,7 @@
 }
 
 /*버튼 모양*/
-.plusButton::after, .doneButton::after, .closeButton::after, .deleteQuestionButton::after, .addQuestionButton::after {
+.plusButton::after, .refreshButton::after, .doneButton::after, .closeButton::after, .deleteQuestionButton::after, .addQuestionButton::after {
     font-family: 'Material Symbols Outlined';
     font-weight: normal;
     font-style: normal;
@@ -54,6 +54,9 @@
 .plusButton::after {
     content:'add';
 }
+.refreshButton::after {
+    content:'refresh';
+}
 .doneButton::after, .addQuestionButton::after {
     content:'done';
 }
@@ -62,7 +65,7 @@
 }
 
 /*버튼 Hover Event*/
-.plusButton:hover {
+.plusButton:hover, .refreshButton:hover {
     background-color: #dbdbdb;
 }
 .doneButton:hover {
@@ -73,7 +76,7 @@
 }
 
 /*버튼 Active Event*/
-.plusButton:active {
+.plusButton:active, .refreshButton:active {
     background-color: #c2c2c2;
 }
 .doneButton:active {

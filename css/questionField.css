@@ -19,6 +19,8 @@
     border-radius: 5px;   
     border: 1px solid #dedede;
 
+    font-family: 'GangwonEdu_OTFBoldA';
+
     overflow-y: overlay;
     visibility: hidden;
 }
@@ -75,14 +77,13 @@ body.blur::before{
     padding: 0 12px;
 
     display: flex;
-    fiex-direction: row;
+    flex-direction: row;
     align-items: center;
 }
 
 .textField {
     width: calc(100% - 40px);
     
-    font-family: 'GangwonEdu_OTFBoldA';    
     font-size: 40px; 
 }
 
@@ -106,7 +107,7 @@ body.blur::before{
 
 .questionPad {
     width: 440px;
-    height: 220px;
+    height: 230px;
 
     margin: 15px 20px;
     padding: 10px;

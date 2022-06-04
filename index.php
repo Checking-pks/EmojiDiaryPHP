@@ -34,29 +34,52 @@
                 </div>
             </header>";
             
-            echo
-            "
-            <div class='emojiField'>    
-                <div class='emojiPad'>
-                    <div class='headEmojiField'>
-                        <div class='mainEmoji'>😀</div>
-                        <div class='date'>2022-05-21</div>
-                    </div>
-                    <div class='dividingLine'></div>
-                    <div class='bodyEmojiField'>
-                        <div class='e'>😀</div>
-                        <div class='e'>☀️</div>
-                        <div class='e'>🍳</div>
-                        <div class='e'>🍕</div>
-                        <div class='e'>🍲</div>
-                        <div class='e'>🍺</div>
-                        <div class='e'>😀</div>
-                        <div class='e'>😀</div>
-                        <div class='e'>😀</div>
-                        <div class='e'>😀</div>
-                    </div>
-                </div>
-            </div>";
+            echo"<div class='emojiField'>"; /*open -  emojiField*/
+                $dayMemoList = mysqli_query($db_conn, "SELECT * FROM date_memo");
+
+                while ($row = mysqli_fetch_assoc($dayMemoList)) {
+                    $dayMemoQuestion = mysqli_query($db_conn, "SELECT * FROM date_memo_question WHERE id=".$row["id"]);
+                    $questionRow = mysqli_fetch_assoc($dayMemoQuestion);
+
+                    $dayQuestionList = explode("\n", $questionRow["question"]);
+                    $dayAnswerList = explode("\n", $questionRow["answer"]);
+                    $dayLoreList = explode("\n", $questionRow["lore"]);
+
+                    echo "<div class='emojiPad'>"; /*open - emojiPad*/
+                        echo "<div class='headEmojiField'>"; /*open - headEmojiField*/
+                            echo "<div class='mainEmoji'>".$row["mainEmoji"]."</div>";
+                            echo "<div class='date'>".$row["date"]."</div>";
+                        echo "</div>"; /*close - headEmojiField*/
+                        echo "<div class='dividingLine'></div>";
+                        echo "<div class='bodyEmojiField'>"; /*open - bodyEmojiField*/
+                            for ($i=0; $i < count($dayAnswerList); $i++) {
+                                echo "<div class='e'>".$dayAnswerList[$i]."</div>";
+                            }
+                        echo "</div>"; /*close - bodyEmojiField*/
+                        echo "<div class='detailField'>"; /*open - detailField*/
+                            for ($i=0; $i < count($dayQuestionList); $i++) {
+                                /*패드 구분*/
+                                echo "<div class='detailPad'>"; /*open - questionPad*/
+
+                                /*질문 부분*/
+                                echo "<div class='headDetailField'>"; /*open - headDetailField*/
+                                echo "<div class='textField'>".$dayQuestionList[$i]."</div>";
+                                echo "</div>"; /*close - headDetailField*/
+                            
+                                /*답변 부분*/
+                                echo "<div class='bodyDetailField'>"; /*open - bodyDetailField*/
+                                echo "<div class='detailResult'>"; /*open - detailResult*/
+                                echo "<div class='emoji'>".$dayAnswerList[$i]."</div>";
+                                echo "<div class='lore'>".$dayLoreList[$i]."</div>";
+                                echo "</div>"; /*close - detailResult*/
+                                echo "</div>"; /*close - bodyDetailField*/
+
+                                echo "</div>"; /*close - questionPad*/
+                            }
+                        echo "</div>"; /*close - detailField*/
+                    echo "</div>"; /*close - emojiPad*/
+                }
+            echo "</div>"; /*close - emojiField*/
 
             echo "<div class='questionField'>"; /*open - questionField*/
 
