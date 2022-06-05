@@ -1,5 +1,6 @@
 $(document).ready(function () {
     $('button.closeButton').click(function () {
+        $('div.detailField').css('visibility', 'hidden');
         $('div.questionField').css('visibility', 'hidden');
         $('button.closeButton').css('visibility', 'hidden');
         $('button.doneButton').css('visibility', 'hidden');
@@ -18,7 +19,7 @@ $(document).ready(function () {
     });
 
     $('button.doneButton').click(function () {
-        $dayTextList = $('.textField');
+        $dayTextList = $('.headQuestionField > .textField');
         $dayEmojiList = $('.selectedEmoji > .emoji');
         $dayLoreList = $('.selectedEmoji > .lore');
         
@@ -46,12 +47,7 @@ $(document).ready(function () {
 
         $('iframe').attr('src', $src);
 
-        $('div.questionField').css('visibility', 'hidden');
-        $('button.closeButton').css('visibility', 'hidden');
-        $('button.doneButton').css('visibility', 'hidden');
-        
-        $('body').removeClass('blur');
-        $('header.header').removeClass('blur');
+        location.reload();
     });
 
     $('button.addQuestionButton').click(function () {
@@ -80,12 +76,18 @@ $(document).ready(function () {
     $('button.options').click(function () {
         $selector = $(this).parent();
 
-        console.log($selector);
-
         for ($i=0; $i<$selector[0].children.length; $i++) 
             $selector[0].children[$i].className = 'options nonSelectedEmoji';
 
         $(this).addClass('selectedEmoji');
         $(this).removeClass('nonSelectedEmoji');
+    });
+
+    $('div.emojiPad').click(function () {
+        $(this.querySelector('.detailField')).css('visibility', 'visible');
+        $('button.closeButton').css('visibility', 'visible');
+        
+        $('body').addClass('blur');
+        $('header.header').addClass('blur');
     });
 });

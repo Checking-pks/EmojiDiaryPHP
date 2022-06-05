@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.detailField {
+    width: 490px;
+    height: 80vh;
+
+    position: fixed;
+    top: calc(10px);
+    left: calc(50% - 250px);
+
+    margin-top: 120px;
+
+    background-color: #f1ffe0;
+    border-radius: 5px;   
+    border: 1px solid #dedede;
+
+    font-family: 'GangwonEdu_OTFBoldA';
+
+    cursor: auto;
+
+    overflow-y: overlay;
+    visibility: hidden;
+}
+
+.detailField::-webkit-scrollbar {
+    width: 10px;
+}
+.detailField::-webkit-scrollbar-thumb {
+    background-color: green;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+.detailField::-webkit-scrollbar-track {
+    background-color: #f1ffe0;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+}
+
+body.blur::before{
+    content: ' ';
+
+    width: 100%;
+    height: 100%;
+    
+    background-color: rgb(110 110 110 / 70%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.header.blur::before{
+    content: ' ';
+
+    width: 100%;
+    height: 100%;
+    
+    background-color: rgb(110 110 110 / 70%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.headDetailField {
+    width: 100%;
+    height: 70px;
+
+    border-bottom: 2px solid #94ba67;
+    
+    padding: 0 12px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.textField {
+    width: calc(100% - 40px);
+    
+    font-size: 40px; 
+}
+
+.bodyDetailField {
+    width: 100%;
+    height: calc(100% - 50px - 20px - 2%);
+    
+    padding: 20px 1% 0 1%;
+
+    font-size: 50px;
+    text-align: center;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.bodyDetailField div {
+    display: flex;
+    flex-direction: column;
+}
+
+.detailPad {
+    width: 440px;
+    height: 230px;
+
+    margin: 15px 20px;
+    padding: 10px;
+
+    background-color: #e4fcc8;
+    border-radius: 5px;   
+    border: 1px solid #dedede;
+}

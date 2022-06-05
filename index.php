@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="background: #e1d8ca;">
     <head>
         <title>Emoji Diary</title>
 
@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="css/emojiField.css">
         <link rel="stylesheet" href="css/questionField.css">
         <link rel="stylesheet" href="css/button.css">
+        <link rel="stylesheet" href="css/detailField.css">
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
 
@@ -35,7 +36,7 @@
             </header>";
             
             echo"<div class='emojiField'>"; /*open -  emojiField*/
-                $dayMemoList = mysqli_query($db_conn, "SELECT * FROM date_memo");
+                $dayMemoList = mysqli_query($db_conn, "SELECT * FROM date_memo ORDER BY id DESC");
 
                 while ($row = mysqli_fetch_assoc($dayMemoList)) {
                     $dayMemoQuestion = mysqli_query($db_conn, "SELECT * FROM date_memo_question WHERE id=".$row["id"]);
